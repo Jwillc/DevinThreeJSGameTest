@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wilderness Survival</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+      }
+      #game-container {
+        width: 100%;
+        height: 100%;
+      }
+      .ui-overlay {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-family: Arial, sans-serif;
+        pointer-events: none;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      }
+      .crosshair {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+      .crosshair::before,
+      .crosshair::after {
+        content: '';
+        position: absolute;
+        background-color: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      }
+      .crosshair::before {
+        width: 2px;
+        height: 20px;
+        left: 9px;
+        top: 0;
+      }
+      .crosshair::after {
+        width: 20px;
+        height: 2px;
+        left: 0;
+        top: 9px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container"></div>
+    <div class="ui-overlay">
+      <h2>Wilderness Survival</h2>
+      <p>WASD to move, Mouse to look around</p>
+      <div id="stats">
+        <p>Health: <span id="health">100</span>%</p>
+        <p>Hunger: <span id="hunger">100</span>%</p>
+        <p>Thirst: <span id="thirst">100</span>%</p>
+      </div>
+    </div>
+    <div class="crosshair"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
